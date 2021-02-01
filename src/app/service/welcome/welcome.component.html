@@ -1,0 +1,30 @@
+<h1>Welcome!</h1>
+<div class="container">
+    <div>
+        Welcome {{uname}}. This is your Welcome page.
+        To check Todos list click <a routerLink="/listtodos">here</a>
+    </div>
+
+    <div class="container">
+        click here to customize Message
+        <button (click)="getWelcomeMessage()" class="btn btn-primary">
+            GET WELCOME MESSAGE
+        </button>
+    </div>
+    <div class="container">
+        click here for Parameterised Message
+        <button (click)="getWelcomeMessageWithPathVariable()" class="btn btn-primary">
+            GET MESSAGE via Pathvariable
+        </button>
+    </div>
+
+    <div class="container" *ngIf="welcomeMessageFromServer">
+        <h2>Customized Message</h2>
+        {{welcomeMessageID_FromServer}} - {{welcomeMessageFromServer}}
+    </div>
+
+    <div class="container" *ngIf="errorWelcomeMessage">
+        <h2>Error Customized Message</h2>
+        {{errorWelcomeMessage}}
+    </div>
+</div>

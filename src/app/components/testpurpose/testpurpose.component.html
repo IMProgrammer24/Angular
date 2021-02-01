@@ -1,0 +1,20 @@
+<a href="#" (click) = "show()">
+  <img id="imageresource" src="https://therichpost.com/wp-content/uploads/2019/09/Angular-8-custom-accordion-working-example-364x225.png" style="width: 125px; height: 125px;">
+  Click to Enlarge
+</a>
+<!-- Creates the bootstrap modal where the image will appear -->
+<div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title" id="myModalLabel">Image preview</h4>
+    </div>
+    <div class="modal-body">
+      <img src="https://therichpost.com/wp-content/uploads/2019/09/Angular-8-custom-accordion-working-example-364x225.png" id="imagepreview" style="width: 425px; height: 425px;" >
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal" (click) = "hide()">Close</button>
+    </div>
+  </div>
+</div>
+</div>

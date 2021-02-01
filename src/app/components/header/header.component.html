@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+   
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/myLogo.png" height="30" alt="">
+        <span >MY APPLICATION</span>
+      </a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav text-uppercase">
+                <li class="nav-item">
+                  <a class="nav-link" *ngIf="hardcodedAuthentication.isUserLoggedIn()" [routerLink]="['/home']">Home</a>
+                </li>
+                <!-- <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li> -->
+                <li class="nav-item"><a *ngIf="hardcodedAuthentication.isUserLoggedIn()" class="nav-link" routerLink="/about">About</a></li>
+                <li class="nav-item"><a *ngIf="hardcodedAuthentication.isUserLoggedIn()" class="nav-link" href="#team">Team</a></li>
+                <li class="nav-item"><a *ngIf="hardcodedAuthentication.isUserLoggedIn()" class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item"><a class="nav-link" *ngIf="!hardcodedAuthentication.isUserLoggedIn()" routerLink="/signin">Sign In</a></li>
+                <li class="nav-item"><a class="nav-link" *ngIf="!hardcodedAuthentication.isUserLoggedIn()" routerLink="/signup">Sign Up</a></li>
+                <li class="nav-item"><a class="nav-link" *ngIf="hardcodedAuthentication.isUserLoggedIn()" routerLink="/logout">Logout</a></li>
+            </ul>
+        </div>
+</nav>
+<!-- Masthead-->
+
